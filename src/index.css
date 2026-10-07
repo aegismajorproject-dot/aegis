@@ -1,0 +1,17 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+body { @apply bg-ink text-slate-200 font-sans antialiased; margin: 0;
+  background-image: radial-gradient(circle at 20% 0%, #0b2233 0%, transparent 45%), radial-gradient(circle at 100% 100%, #08241f 0%, transparent 40%); background-attachment: fixed; }
+.glass { @apply bg-panel/70 border border-line rounded-lg backdrop-blur-md; }
+.btn { @apply px-3 py-1.5 rounded border border-line text-xs font-medium hover:border-cy hover:text-cy transition-colors; }
+.btn-primary { @apply bg-cy/15 border-cy/50 text-cy hover:bg-cy/25; }
+.th { @apply text-left font-medium text-slate-500 px-3 py-2 cursor-pointer select-none whitespace-nowrap; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+.sweep { transform-origin: 0 0; animation: sweep 6s linear infinite; }
+@keyframes blip { 0% { opacity: 1; } 100% { opacity: .2; } }
+.blip { animation: blip 6s linear infinite; }
+@keyframes pulse-ring { 0% { r: 1.6; opacity: .8; } 100% { r: 4; opacity: 0; } }
+.pulse-ring { animation: pulse-ring 2s ease-out infinite; }
+@keyframes slidein { from { transform: translateX(20px); opacity: 0; } to { transform: none; opacity: 1; } }
+.slidein { animation: slidein .25s ease-out; }
+@media (prefers-reduced-motion: reduce) { .sweep, .blip, .pulse-ring { animation: none; } }
+::-webkit-scrollbar { width: 6px; height: 6px; } ::-webkit-scrollbar-thumb { background: #1b2e3f; border-radius: 3px; }
